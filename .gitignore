@@ -14,4 +14,4 @@ psd
 thumb
 sketch
 
-settings.json
+.vscode/*
