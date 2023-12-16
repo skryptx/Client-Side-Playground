@@ -1,5 +1,11 @@
-# DevBytesFE
+## DevBytesFE
 FE Learnings and Projects. Collection of multiple projects and code playgrounds for testing new libraries and learning new concepts.
+
+### Primary Language:
+JavaScript/TypeScript
+
+### Primary Framework:
+React
 
 ### Commit Instructions:
 
