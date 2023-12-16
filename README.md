@@ -1,5 +1,5 @@
 # DevBytesFE
-FE Learnings and Projects
+FE Learnings and Projects. Collection of multiple projects and code playgrounds for testing new libraries and learning new concepts.
 
 ### Commit Instructions:
 
