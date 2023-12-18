@@ -20,3 +20,4 @@ e.g. `fetch(url)` return `Promise`.
 1. Pending: Not yet finished or rejected.
 2. FulFilled: Success, the value is now available.
 3. Rejected: Error.
+4. Promise is only settled once. The state will remain unchange after that.
