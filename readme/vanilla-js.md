@@ -4,7 +4,8 @@ e.g when one api depends on another api response(and it leads to nested api call
 
 1. Makes our code hard to mantain, understand.
 
-**Solution**: `Promises`
+**Solution**: `Promises`\
+**Promises do not get rid of callbacks, but it sure get rid of callbackk hell.**
 
 ### Promises:
 
@@ -21,3 +22,15 @@ e.g. `fetch(url)` return `Promise`.
 2. FulFilled: Success, the value is now available.
 3. Rejected: Error.
 4. Promise is only settled once. The state will remain unchange after that.
+
+### Implementation:
+
+1. In below example, response contains properties like type, body, status etc.
+2. We need to extract the actual data using `.json()` method.
+3. `.json()` is async itself. So need to handle it aswell.
+
+```js
+fetch(url)
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+```
