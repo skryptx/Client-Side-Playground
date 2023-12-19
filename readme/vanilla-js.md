@@ -31,6 +31,36 @@ e.g. `fetch(url)` return `Promise`.
 
 ```js
 fetch(url)
+  .then(
+    (response) => response.json(),
+    (err) => console.log(err)
+  )
+  .then(
+    (data) => console.log(data),
+    (err) => console.log(err)
+  );
+```
+
+### Error Handling:
+
+```js
+fetch(url)
+  .then(
+    (response) => response.json(),
+    (err) => console.log(err)
+  )
+  .then(
+    (data) => console.log(data),
+    (err) => console.log(err)
+  );
+```
+
+Rather than handling error in all the promises, just catch them at the end of the promises. Catch at the end of the promise chain will catch any error happen in any of the promises.
+
+```js
+fetch(url)
   .then((response) => response.json())
-  .then((data) => console.log(data));
+  .then((data) => console.log(data))
+  .catch((err) => console.log(err))
+  .finally(() => console.log(done));
 ```
