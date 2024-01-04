@@ -23,3 +23,11 @@
 - Need to manually setup eslint(and others).
 - Used for modern real world projects.
 - Bundeling is fast and refresh is fast after making changes.
+
+### How App starts:
+
+1. `index.js` is the first file as webpack looks for the exact file name.
+2. Create `root` by `ReactDOM.createRoot(elemntRoot)`.
+3. Then render the component in root created.
+4. Strict Mode can be activated by enclosing `<App />` in `<React.StrictMode>` tags.
+5. It just ensures the component rendering happens twice to avoid any bugs and no outdated react apis are used.
