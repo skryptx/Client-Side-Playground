@@ -14,7 +14,7 @@ class UserProfile {
     }
 
     set username(name) {
-        if(name.length === 0 || typeof name !== 'string') {
+        if(name?.length === 0 || typeof name !== 'string') {
             throw new Error("Invalid username.");
         }
 
@@ -46,5 +46,3 @@ class UserProfile {
         this.#birthdate = date;
     }
 }
-
-console.log(new UserProfile('sinni', 's@s.com', '1010-10-10').birthdate);
