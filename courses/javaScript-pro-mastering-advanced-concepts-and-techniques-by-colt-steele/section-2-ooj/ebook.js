@@ -14,13 +14,16 @@ class Book {
 }
 
 class Ebook extends Book {
+  #fileSize;
   constructor(title, author, year, fileSize) {
     super(title, author, year);
 
-    this.fileSize = fileSize;
+    this.#fileSize = fileSize;
   }
 
   download() {
     return `Title: ${this.title}, FileSize: ${this.fileSize}`;
   }
 }
+
+console.log(new Ebook("", "", 12, 123)["fileSize"]);
