@@ -26,4 +26,18 @@ class Ebook extends Book {
   }
 }
 
-console.log(new Ebook("", "", 12, 123)["fileSize"]);
+class User {
+  name;
+  constructor(name) {
+      this.name = name;
+  }
+
+  getName() {
+      console.log('Name:', this);
+  }
+}
+
+const obj = new User("sinni");
+obj.getName() // this will be the object itself
+const func = obj.getName;
+func.call(obj); // this will be the object itself
