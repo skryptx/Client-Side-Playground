@@ -66,3 +66,22 @@ Permanently binds the function to a context
 func.bind(obj);
 func() // this will be the object itself
 ``` 
+
+Use Case: 
+```js
+const obj = {
+    name: "Sinni",
+    getName: function() {
+        return `Name: ${this}`;
+    }
+}
+
+//wrong
+el.addEventListener("click", obj.getName); // this will be element here e.g. button
+
+//correct
+el.addEventListener("click", obj.getName.bind(obj)); // this will be the object here
+```
+
+## Arrow Functions and `this`
+Arrow functions does not create their own `this`

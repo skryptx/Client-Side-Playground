@@ -27,17 +27,14 @@ class Ebook extends Book {
 }
 
 class User {
-  name;
   constructor(name) {
-      this.name = name;
+    this.name = name;
   }
 
-  getName() {
-      console.log('Name:', this);
-  }
-}
+  printName() {
+    setTimeout((function() {
+      console.log(this.name);
+    }), 1000).bind(this);
+}}
 
-const obj = new User("sinni");
-obj.getName() // this will be the object itself
-const func = obj.getName;
-func.call(obj); // this will be the object itself
+new User("Sinni").printName();
