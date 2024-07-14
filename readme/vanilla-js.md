@@ -91,4 +91,5 @@ new Dog("German Shepherd", "Rocky"); //will create an object and returns the thi
 - If we call method on an object it will look through all __proto__(from lvl1 and so on) props until it finds it
 
 ## Prototypes
- 
+- If you inherit a class in another class, js will add the properties of parent class to child class and link the parent class prototype to child class prototype.
+- class is just a syntactic sugar.
