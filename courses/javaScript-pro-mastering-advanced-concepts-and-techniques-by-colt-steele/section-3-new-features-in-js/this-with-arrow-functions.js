@@ -8,14 +8,14 @@ class User {
       console.log(`Class Print Name: ${this.name}`);      
     }
 
-    setName(name) {
+    setName = (name) => {
         console.log(`Class Set Name: ${this.name}`);      
     }
 }
 
 const userObj = new User("Sinni");
-userObj.printName();
-userObj.setName("Shanky");
+userObj.printName(); //Sinni
+userObj.setName("Shanky"); //Sinni
 
 
 /* Object */

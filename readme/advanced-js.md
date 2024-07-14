@@ -85,3 +85,5 @@ el.addEventListener("click", obj.getName.bind(obj)); // this will be the object 
 
 ## Arrow Functions and `this`
 Arrow functions does not create their own `this`
+
+[Link: Examples](../courses\javascript-pro-mastering-advanced-concepts-and-techniques-by-colt-steele\section-3-new-features-in-js\this-with-arrow-functions.js)
