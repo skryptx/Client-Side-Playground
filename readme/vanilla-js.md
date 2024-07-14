@@ -64,3 +64,31 @@ fetch(url)
   .catch((err) => console.log(err))
   .finally(() => console.log(done));
 ```
+
+## `new`  keyword
+`new` will 
+- create an empty object
+- sets keyword `this` to that object
+- returns `this`
+- creates link to object prototype
+- constructor function implementation below
+```js
+function Dog(breed, name) {
+  this.breed = breed;
+  this.name = name;
+  this.bark = function() {
+    return `${this.name} says Woof!`;
+  }
+}
+
+new Dog("German Shepherd", "Rocky"); //will create an object and returns the this reference without any return statement
+```
+
+## class and methods
+- Each class instance(`object`) will have same method instance but unique properties. 
+- These methods live on first level of `__proto__`(prototype property) and this `__proto__` property will be same for all `objects` of same `Class`. 
+- `__proto__` will have another `__proto__` inside which will contain `objects` prototypes. This is called prototype chaining.
+- If we call method on an object it will look through all __proto__(from lvl1 and so on) props until it finds it
+
+## Prototypes
+ 
