@@ -93,3 +93,12 @@ new Dog("German Shepherd", "Rocky"); //will create an object and returns the thi
 ## Prototypes
 - If you inherit a class in another class, js will add the properties of parent class to child class and link the parent class prototype to child class prototype.
 - class is just a syntactic sugar.
+
+## Promises
+```js
+new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("bye");
+  }, 2000)
+})
+```
