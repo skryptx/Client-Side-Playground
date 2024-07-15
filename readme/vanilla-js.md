@@ -88,7 +88,7 @@ new Dog("German Shepherd", "Rocky"); //will create an object and returns the thi
 - Each class instance(`object`) will have same method instance but unique properties. 
 - These methods live on first level of `__proto__`(prototype property) and this `__proto__` property will be same for all `objects` of same `Class`. 
 - `__proto__` will have another `__proto__` inside which will contain `objects` prototypes. This is called prototype chaining.
-- If we call method on an object it will look through all __proto__(from lvl1 and so on) props until it finds it
+- If we call method on an object it will look through all `__proto__`(from lvl1 and so on) props until it finds it
 
 ## Prototypes
 - If you inherit a class in another class, js will add the properties of parent class to child class and link the parent class prototype to child class prototype.
