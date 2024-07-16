@@ -102,3 +102,16 @@ new Promise((resolve, reject) => {
   }, 2000)
 })
 ```
+
+## Genrators and yield
+```js
+function* nextNum(counter) {
+  while(counter < 100) {
+    yield counter;
+    counter++;
+  }
+}
+
+const generator = nextNum(10); // It just returns the generator not function
+generator.next() // {value: 11, done: false}
+```
