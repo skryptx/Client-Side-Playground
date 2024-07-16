@@ -115,3 +115,10 @@ function* nextNum(counter) {
 const generator = nextNum(10); // It just returns the generator not function
 generator.next() // {value: 11, done: false}
 ```
+
+## Array.from()
+Generating new arrays from non array
+```js
+Array.from("hello"); // ['h','e','l','l','o']
+Array.from(new Set([1,2,3,4])); // [1,2,3,4]
+```
