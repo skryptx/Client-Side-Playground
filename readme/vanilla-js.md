@@ -117,8 +117,9 @@ generator.next() // {value: 11, done: false}
 ```
 
 ## Array.from()
-Generating new arrays from non array
+Generating new arrays from non array. It also takes callback function as second argument.
 ```js
 Array.from("hello"); // ['h','e','l','l','o']
 Array.from(new Set([1,2,3,4])); // [1,2,3,4]
+Array.from("abcd", x => x.toUpperCase()); // ['A', 'B', 'C', 'D']
 ```
