@@ -123,3 +123,4 @@ Array.from("hello"); // ['h','e','l','l','o']
 Array.from(new Set([1,2,3,4])); // [1,2,3,4]
 Array.from("abcd", x => x.toUpperCase()); // ['A', 'B', 'C', 'D']
 ```
+
