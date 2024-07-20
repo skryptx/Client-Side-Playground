@@ -124,3 +124,11 @@ Array.from(new Set([1,2,3,4])); // [1,2,3,4]
 Array.from("abcd", x => x.toUpperCase()); // ['A', 'B', 'C', 'D']
 ```
 
+## Useful Operators
+```js
+const num;
+num ??= 10; // will assign 10 to num if num is null or undefined
+num !!= 10; // if num is a falsy value (0,'', undefined, null), it will assign 10 to it
+num &&= 10; // rarely used. if num is truthy it will assign 10 to num
+num = num ?? 10; // same as num ??=10
+```
