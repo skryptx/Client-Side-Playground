@@ -87,3 +87,15 @@ el.addEventListener("click", obj.getName.bind(obj)); // this will be the object 
 Arrow functions does not create their own `this`
 
 [Link: Examples](../courses\javascript-pro-mastering-advanced-concepts-and-techniques-by-colt-steele\section-3-new-features-in-js\this-with-arrow-functions.js)
+
+## Debounce
+
+```js
+let debounceTime;
+function makeApiRequest() {
+    clearTimeout(debounceTime); //clears the previous timout if new term is input
+    debounceTime = setTimeout(() => {
+        console.log("MAke an API Request!!!");
+    }, 500);
+}
+```
