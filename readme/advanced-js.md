@@ -1,80 +1,87 @@
 ## `this`: behavior in class and object
- 
+
 - Scenario 1:
+
 ```js
 class User {
-    name;
-    constructor(name) {
-        this.name = name;
-    }
+  name;
+  constructor(name) {
+    this.name = name;
+  }
 
-    getName() {
-        return `Name: ${this}`;
-    }
+  getName() {
+    return `Name: ${this}`;
+  }
 }
 
 const obj = new User("sinni");
-obj.getName() // this will be the object itself
+obj.getName(); // this will be the object itself
 const func = obj.getName;
 func(); // error: here this is undefined
 ```
 
 - Scenario 2:
+
 ```js
 const obj = {
-    name: "Sinni",
-    getName: function() {
-        return `Name: ${this}`;
-    }
-}
+  name: "Sinni",
+  getName: function () {
+    return `Name: ${this}`;
+  },
+};
 
-obj.getName() // this will be the object itself
+obj.getName(); // this will be the object itself
 const func = obj.getName;
 func(); // browser: window     node: global
 ```
 
 ## `call`
+
 ```js
 class User {
-    name;
-    constructor(name) {
-        this.name = name;
-    }
+  name;
+  constructor(name) {
+    this.name = name;
+  }
 
-    getName(action = 'sings') {
-        return `Name: ${this} Action: ${action}`;
-    }
+  getName(action = "sings") {
+    return `Name: ${this} Action: ${action}`;
+  }
 }
 
 const obj = new User("sinni");
-obj.getName() // this will be the object itself
+obj.getName(); // this will be the object itself
 const func = obj.getName;
 func.call(obj); // this will be the object itself
-func.call(obj, 'dances'); // can also pass arguments
+func.call(obj, "dances"); // can also pass arguments
 ```
 
 ## `apply`
-Needs arguments in array instead
-```js
-func.apply(obj, ['dances']); // can also pass arguments
-``` 
 
+Needs arguments in array instead
+
+```js
+func.apply(obj, ["dances"]); // can also pass arguments
+```
 
 ## `bind`
+
 Permanently binds the function to a context
+
 ```js
 func.bind(obj);
-func() // this will be the object itself
-``` 
+func(); // this will be the object itself
+```
 
-Use Case: 
+Use Case:
+
 ```js
 const obj = {
-    name: "Sinni",
-    getName: function() {
-        return `Name: ${this}`;
-    }
-}
+  name: "Sinni",
+  getName: function () {
+    return `Name: ${this}`;
+  },
+};
 
 //wrong
 el.addEventListener("click", obj.getName); // this will be element here e.g. button
@@ -84,6 +91,7 @@ el.addEventListener("click", obj.getName.bind(obj)); // this will be the object 
 ```
 
 ## Arrow Functions and `this`
+
 Arrow functions does not create their own `this`
 
 [Link: Examples](../courses\javascript-pro-mastering-advanced-concepts-and-techniques-by-colt-steele\section-3-new-features-in-js\this-with-arrow-functions.js)
@@ -93,9 +101,41 @@ Arrow functions does not create their own `this`
 ```js
 let debounceTime;
 function makeApiRequest() {
-    clearTimeout(debounceTime); //clears the previous timout if new term is input
-    debounceTime = setTimeout(() => {
-        console.log("MAke an API Request!!!");
-    }, 500);
+  clearTimeout(debounceTime); //clears the previous timout if new term is input
+  debounceTime = setTimeout(() => {
+    console.log("MAke an API Request!!!");
+  }, 500);
 }
+```
+
+## Throttle
+
+```js
+let isThrottled = false;
+
+function makeApiCall() {
+  if (!isThrottled) {
+    //make request
+    isThrottled = true; // immediately make true after first operation so no more operation is allowed untill it is turned back to false by timeout below
+    setTimeout(() => {
+      isThrottled = false;
+    }, 500);
+  }
+}
+```
+
+## Debounce vs Throttling
+
+Throttling executes costly operation after fixed intervals if events keep getting triggered where as in debounce it will wait for the timeout to be over since last request to make a new request. timeout is reset in case of debounce if new event comes in before the timeout is finished.
+
+## Request Animation Frame
+
+Used to create smooth animations. It waits for the next browser repaint and then adds to the animation.
+
+```js
+function animate() {
+  ele.style.transform = `rotate(${(angle += 2)})`;
+  requestAnimationFrame(animate); // you have to call this from within the animate function inorder to keep the animation going
+}
+requestAnimationFrame(animate); // it executes only once this way
 ```
