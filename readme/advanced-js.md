@@ -158,5 +158,20 @@ const data = await res.json();
 
 ## Request Headers with fetch
 ```js
+fetch(url, {
+        method: "POST",
+        headers: {
+          content-type: "application/json"
+        },
+        body: JSON.strigify({
+          param1: "",
+          param2: ""
+        })
+      })
+  .then(res => res.json())
+  .then(res => this.someProp = res)
+  .catch(err => {
+    this.err = err;
+  });
 
 ```
