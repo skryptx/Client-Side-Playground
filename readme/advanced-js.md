@@ -139,3 +139,24 @@ function animate() {
 }
 requestAnimationFrame(animate); // it executes only once this way
 ```
+
+## fetch api
+404 does not get caught in catch, because promise was not rejected. If network issue, then it will be caught in the catch.
+```js
+fetch(url)
+  .then(res => res.json())
+  .then(res => this.someProp = res)
+  .catch(err => {
+    this.err = err;
+  });
+
+OR
+
+const res = await fetch(url);
+const data = await res.json();
+```
+
+## Request Headers with fetch
+```js
+
+```
