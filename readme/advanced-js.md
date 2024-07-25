@@ -175,3 +175,30 @@ fetch(url, {
   });
 
 ```
+
+## localstorage
+Persists accross sessions. Only `supports strings`. If not a string. First do `JSON.stringify` on the value and then parse it after retreival. Limit on storage(5MB).
+```js
+localStorage.setItem("var","chai");
+localStorage.getItem("var");
+localStorage.removeItem("var");
+localStorage.clear();
+```
+
+## sessionStorage
+Session storage is particular to a tab. If you open another tab or browser window, they will have their own session storage. Within the same tab it will persists even after a refresh.
+```js
+sessionStorage.setItem("var","chai");
+sessionStorage.getItem("var");
+sessionStorage.clear();
+```
+
+## IndexedDB:
+- async
+- large size
+
+## Navigator.geolocation api
+Helps in tracking users location.
+
+## navigator.mediaDevices.getUserMedia({video: true}) API:
+Help access microphone, web cam etc.
