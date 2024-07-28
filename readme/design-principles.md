@@ -32,3 +32,6 @@ function makeBirdFly(bird) {
 const duck = new Duck();
 makebirdFly(duck); //as per this principle should work
 ```
+
+## Interface Seggregation Principle:
+A class should not be forced to implement interfaces it does not use.
