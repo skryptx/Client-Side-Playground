@@ -8,4 +8,6 @@
 ## Open Closed Priniciple:
 
 - Open for extension and closed for modification.
--
+
+## Liskov Substitution Principle:
+- Objects of superclass should be replacable with objects of sub class without affecting the correctness of the program.
