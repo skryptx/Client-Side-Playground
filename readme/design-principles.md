@@ -11,3 +11,24 @@
 
 ## Liskov Substitution Principle:
 - Objects of superclass should be replacable with objects of sub class without affecting the correctness of the program.
+- 
+```js
+class Bird {
+    fly() {
+        console.log("This bird can fly!");
+    }
+}
+
+class Duck extends Bird {
+    fly() {
+        console.log("This duck can fly!";)
+    }
+}
+
+function makeBirdFly(bird) {
+    bird.fly();
+}
+
+const duck = new Duck();
+makebirdFly(duck); //as per this principle should work
+```
