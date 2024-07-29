@@ -35,3 +35,10 @@ makebirdFly(duck); //as per this principle should work
 
 ## Interface Seggregation Principle:
 A class should not be forced to implement interfaces it does not use.
+
+## Dependency ninversion principle
+High level modules(main app logic) should not depend directly on low-level modules (like specific tools and libraries).
+
+# Other Principles:
+
+## Law of Demeter
